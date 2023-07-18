@@ -1,0 +1,147 @@
+@font-face {
+  font-family: gilroy;
+  src: url(../Gilroy-Light.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gilroy;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+}
+
+#center {
+  display: flex;
+  height: 95%;
+  width: 100%;
+ position: relative;
+}
+
+#left {
+  height: 100%;
+  width: 25%;
+  background-color: #fff;
+  position: relative;
+}
+
+#right {
+  height: 100%;
+  width: 75%;
+  background-color: #f3f3f3;
+}
+
+#nav {
+  height: 5%;
+  width: 100%;
+  background-color: rgb(211, 211, 211);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#nav-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 23%;
+}
+
+#nav #nav-1 img {
+  height: 25px;
+}
+
+
+#nav-1 h6 {
+  font-size: 13px;
+  cursor: pointer;
+}
+
+
+#nav-1 h6:hover {
+  color: #555555;
+}
+
+#nav-2 i{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#side{
+  height: 100%;
+  width: 3%;
+  background-color: rgb(211, 211, 211);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 20%;
+}
+
+#top i{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#top i:hover{
+  color: #575757;
+}
+
+#bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 10%;
+}
+
+#bottom i{
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#bottom i:hover{
+color: #575757;
+}
+
+#left .file{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5%;
+  width: 100%;
+  padding: 13px;
+}
+#left .icon{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 23%;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#left .icon i:hover{
+  color: #7c7979;
+}
