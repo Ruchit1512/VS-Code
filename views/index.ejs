@@ -46,10 +46,10 @@
 
         <div id="top">
 
-          <i class="ri-file-copy-line"></i>
+          <i  class="ri-file-copy-line explore"></i>
           <i class="ri-search-line"></i>
           <i class="ri-git-branch-line"></i>
-          <i class="ri-external-link-line"></i>
+          <i class="ri-function-line"></i>
 
         </div>
 
@@ -61,35 +61,119 @@
       </div>
 
       <hr>
-      
+
       <div id="left">
+
         <div id="l-top">
           <h3>EXPLORER</h3>
           <img src="../images/icons8-dot-32.png" alt="">
         </div>
+
         <hr>
+
         <div class="file">
           <h4><i class="ri-arrow-down-s-line"></i> New Folder</h4>
-
           <div class="icon">
-            <i class="ri-file-add-line"></i>
-            <i class="ri-folder-add-line"></i>
-            <i class="ri-restart-line"></i>
+            <i id="fileicon" class="ri-file-add-line"></i>
+            <i id="foldericon" class="ri-folder-add-line"></i>
+            <i id="restart" class="ri-restart-line"></i>
           </div>
 
         </div>
 
+        <div id="files">
+          <form id="fileform" action="/createfile" method="post">
+            <input type="text" name="filename" placeholder="filename">
+          </form>
+          <form id="folderform" action="/createfolder" method="post">
+            <input type="text" name="foldername" placeholder="foldername">
+          </form>
+          <div class="elem">
+            <i class="ri-folder-line"></i>
+            images
+          </div>
+          <div class="elem">
+            <i class="ri-file-3-line"></i>
+            index.html
+          </div>
+        </div>
+    
+
+       
+
+
+        <% data.forEach(function(e){ %>
+          <a href="<%=e%>">
+            <%= e %>
+          </a> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <a class="dlt" href=" /dlt/<%=e%>">X</a>
+          <% }) %>
       </div>
 
       <hr>
 
       <div id="right">
-        <img src="../images/vs png.png" alt="">
+        <img src="https://cdn.icon-icons.com/icons2/2389/PNG/512/visual_studio_code_logo_icon_144754.png" alt="">
       </div>
 
     </div>
 
   </div>
+
+  <script>
+
+
+    function onoff() {
+      document.querySelectorAll("#files form")
+        .forEach(function (frm) {
+          frm.style.display = 'none'
+        })
+    }
+
+
+    document.querySelector('#fileicon')
+      .addEventListener('click', function () {
+        onoff();
+        document.querySelector('#fileform').style.display = 'block';
+      })
+
+
+    document.querySelector('#foldericon')
+      .addEventListener('click', function () {
+        onoff();
+        document.querySelector('#folderform').style.display = 'block';
+      })
+
+    document.querySelector('#restart')
+      .addEventListener('click', function () {
+        onoff();
+        document.querySelector('#fileform').style.display = 'none';
+      })
+
+
+    var a = document.querySelector("#left")
+    var b = document.querySelector(".explore")
+    var c = document.querySelector("#right")
+
+    var check = 0
+
+    b.addEventListener("click", function () {
+      if (check == 0) {
+        a.style.width = "0%"
+        // c.style.width = "100%"
+        check = 1
+      } else {
+        a.style.width = "20%"
+        c.style.width = "80%"
+        check = 0
+      }
+    })
+
+
+
+
+  </script>
+
 </body>
 
 </html>
