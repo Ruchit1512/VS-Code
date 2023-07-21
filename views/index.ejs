@@ -46,7 +46,7 @@
 
         <div id="top">
 
-          <i  class="ri-file-copy-line explore"></i>
+          <i class="ri-file-copy-line explore"></i>
           <i class="ri-search-line"></i>
           <i class="ri-git-branch-line"></i>
           <i class="ri-function-line"></i>
@@ -88,26 +88,29 @@
           <form id="folderform" action="/createfolder" method="post">
             <input type="text" name="foldername" placeholder="foldername">
           </form>
-          <div class="elem">
-            <i class="ri-folder-line"></i>
-            images
-          </div>
-          <div class="elem">
-            <i class="ri-file-3-line"></i>
-            index.html
-          </div>
-        </div>
-    
+           
 
+          <% files.forEach(function(val){ %>
+            <div class="elem">
+              <% if (val.isDirectory()){ %>
+                <i class="ri-folder-line"></i>
+                <%= val.name %>
+                <% } else { %>
+                  <i class="ri-file-3-line"></i>
+                  <%= val.name %>
+                  <% } %>
+            </div>
+            <% }) %>
+             
+          
+      
        
+       
+        </div>
 
 
-        <% data.forEach(function(e){ %>
-          <a href="<%=e%>">
-            <%= e %>
-          </a> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-          <a class="dlt" href=" /dlt/<%=e%>">X</a>
-          <% }) %>
+
+          
       </div>
 
       <hr>
@@ -120,59 +123,7 @@
 
   </div>
 
-  <script>
-
-
-    function onoff() {
-      document.querySelectorAll("#files form")
-        .forEach(function (frm) {
-          frm.style.display = 'none'
-        })
-    }
-
-
-    document.querySelector('#fileicon')
-      .addEventListener('click', function () {
-        onoff();
-        document.querySelector('#fileform').style.display = 'block';
-      })
-
-
-    document.querySelector('#foldericon')
-      .addEventListener('click', function () {
-        onoff();
-        document.querySelector('#folderform').style.display = 'block';
-      })
-
-    document.querySelector('#restart')
-      .addEventListener('click', function () {
-        onoff();
-        document.querySelector('#fileform').style.display = 'none';
-      })
-
-
-    var a = document.querySelector("#left")
-    var b = document.querySelector(".explore")
-    var c = document.querySelector("#right")
-
-    var check = 0
-
-    b.addEventListener("click", function () {
-      if (check == 0) {
-        a.style.width = "0%"
-        // c.style.width = "100%"
-        check = 1
-      } else {
-        a.style.width = "20%"
-        c.style.width = "80%"
-        check = 0
-      }
-    })
-
-
-
-
-  </script>
+<script src="../javascripts/script.js"></script>
 
 </body>
 
