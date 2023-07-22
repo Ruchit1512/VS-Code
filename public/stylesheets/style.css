@@ -253,16 +253,21 @@ a{
 
 
 #files .elem{
-  margin-bottom: 15px;
+  position: relative;
+  height: 20px;
+  width: 100%;
   display: flex;
-  gap: 10px;
-  color: #d8d8d8;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
   margin-left: 10px;
+  color: #d8d8d8;
 }
 
 #files{
   padding: 5px 7px ;
   font-weight: 600;
+  position: relative;
 }
 
 
@@ -280,4 +285,17 @@ a{
   border-radius: 5px;
   outline-color: royalblue;
   border: 2px solid #f3f3f3;
+}
+
+.elem:hover i{
+  opacity: 1;
+}
+
+.elright i{
+  margin-right: 18px;
+  opacity: 0;
+}
+
+.elem .elright a{
+  margin-left: 0px;
 }

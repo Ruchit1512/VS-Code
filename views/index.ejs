@@ -83,34 +83,34 @@
 
         <div id="files">
           <form id="fileform" action="/createfile" method="post">
-            <input type="text" name="filename" placeholder="filename">
+            <input type="text" name="filename" placeholder="file name">
           </form>
-          <form id="folderform" action="/createfolder" method="post">
-            <input type="text" name="foldername" placeholder="foldername">
+          <form id="folderform" action= "/createfolder" method="post">
+            <input type="text" name="foldername" placeholder="folder name">
           </form>
-           
 
-          <% files.forEach(function(val){ %>
+          <% elem.forEach(function(el){ %>
             <div class="elem">
-              <% if (val.isDirectory()){ %>
+                         
+              <div class="elleft">
+                <% if(el.isDirectory()){ %>
                 <i class="ri-folder-line"></i>
-                <%= val.name %>
+                <%= el.name %>
                 <% } else { %>
-                  <i class="ri-file-3-line"></i>
-                  <%= val.name %>
-                  <% } %>
+                <i class="ri-file-3-line"></i>
+                <%= el.name %>
+                <% } %>
+              </div>
+                           
+              <div class="elright">
+                <i class="ri-pencil-fill"></i>
+                <a href="/delete/<%= el.name %>"><i class="ri-delete-bin-7-line"></i></a>
+              </div>
+
             </div>
             <% }) %>
-             
-          
-      
-       
-       
         </div>
 
-
-
-          
       </div>
 
       <hr>
@@ -123,7 +123,7 @@
 
   </div>
 
-<script src="../javascripts/script.js"></script>
+  <script src="../javascripts/script.js"></script>
 
 </body>
 
