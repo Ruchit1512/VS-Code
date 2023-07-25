@@ -76,13 +76,13 @@
           <div class="icon">
             <i id="fileicon" class="ri-file-add-line"></i>
             <i id="foldericon" class="ri-folder-add-line"></i>
-            <i id="restart" class="ri-restart-line"></i>
+            <a href="/back"><i id="restart" class="ri-restart-line"></i></a>
           </div>
 
         </div>
 
         <div id="files">
-          <form id="fileform" action="/createfile" >
+          <form id="fileform" action="/createfile">
             <input type="text" name="filename" placeholder="file name">
           </form>
           <form id="folderform" action="/createfolder" >
@@ -119,7 +119,15 @@
       <hr>
 
       <div id="right">
-        <img src="https://cdn.icon-icons.com/icons2/2389/PNG/512/visual_studio_code_logo_icon_144754.png" alt="">
+        <div class="rnav">
+            <div class="file"><%= filename %> <a href="/"> <i class="ri-close-line"></i></a>
+        
+          </div>
+        </div>
+        <form action="/update/<%= filename %>" method="post">
+            <textarea name="data" style="resize: none;"><%= filedata %></textarea>
+            <input id="submitbtn" type="submit" value="Save">
+        </form>
       </div>
 
     </div>

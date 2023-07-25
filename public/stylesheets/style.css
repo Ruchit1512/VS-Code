@@ -3,6 +3,11 @@
   src: url(../Gilroy-Light.otf);
 }
 
+@font-face {
+  font-family: consola;
+  src: url(../CONSOLA.TTF);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -51,22 +56,6 @@ body {
   /* display: none; */
 }
 
-#right {
-  position: relative;
-  height: 100%;
-  width:77%;
-  background-color: #2f2f2f;
-}
-
-#right img {
-  position: absolute;
-  top: 50%;
-  left: 57.5%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  opacity: 0.4;
-}
-
 #nav {
   height: 5%;
   width: 100%;
@@ -109,7 +98,7 @@ body {
   background-color: #55555561;
   padding: 8px 0;
   border-radius: 5px;
-
+  
 }
 
 #nav-2 i {
@@ -128,7 +117,7 @@ body {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 1px;
-
+  
 }
 
 
@@ -192,7 +181,7 @@ body {
 
 #left .icon i:hover {
   color: #ffffff;
-
+  
 }
 
 
@@ -201,7 +190,7 @@ hr {
   height: 0.1%;
   width: 100%;
   border: none;
-
+  
 }
 
 #center hr {
@@ -241,7 +230,6 @@ hr {
 
 
 a{
-  margin-left: 42px;
   font-weight: 600;
   text-decoration: none;
   color: #d8d8d8;
@@ -299,3 +287,71 @@ a{
 .elem .elright a{
   margin-left: 0px;
 }
+
+#right {
+  position: relative;
+  height: 100%;
+  width:77%;
+  background-color: #2f2f2f;
+}
+
+#right img {
+  position: absolute;
+  top: 50%;
+  left: 57.5%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  opacity: 0.4;
+}
+
+
+#right .rnav{
+  display: flex;
+  width: 100%;
+  height: 50px;
+}
+
+#right .file{
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  gap: 15px;
+  font-weight: 500;
+  color: #fff;
+  width: fit-content;
+  height: 75%;
+  background-color: #222;
+}
+
+#right form{
+  width: 100%;
+  height: calc(100% - 50px);
+}
+
+#right textarea{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 20px;
+  font-family: consola;
+  font-size: 20px;
+  font-weight: 500;
+  width: 100%;
+  height: 98%;
+  color: #fff;
+}
+
+#right #submitbtn{
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  padding: 5px 5px;
+  background-color: #222222;
+  color: #bebebe;
+  border-radius: 50px;
+  cursor: pointer;
+}
+#right #submitbtn:hover{
+  color: #ffffff;
+}
+
