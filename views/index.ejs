@@ -13,6 +13,18 @@
 <body>
   <div id="main">
 
+
+    <div id="popup">
+      <div id="popupcard">
+        <h3>Edit</h3>
+        <hr>
+        <form action="" method="post">
+          <input id="inp" type="text" name="filename">
+          <input  id="submit" type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+
     <div id="nav">
 
       <div id="nav-1">
@@ -103,7 +115,7 @@
                 <% } %>
               </div>
               <div class="elright">
-                <i class="ri-pencil-fill"></i>
+                <i id="edit" class="ri-pencil-fill"></i>
                 <% if(el.isDirectory()){ %>
                   <a href="/delete/folder/<%= el.name %>"><i class="ri-delete-bin-7-line"></i></a>
                 <% } else { %>

@@ -12,6 +12,12 @@ router.get('/back', function(req, res) {
   res.redirect("back")
 });
 
+router.post(`/updatename/:oldfilename`,function(req,res){
+  fs.rename(`./Files/${req.params.oldfilename}`,`./Files/${req.body.filename}`,function(err){
+    res.redirect('back')
+  })
+})
+
 router.get('/file/:filename', function(req, res) {
   fs.readdir(`./Files`, {withFileTypes: true}, function(err, elem){
     fs.readFile(`./Files/${req.params.filename}`, "utf8", function(err, filedata){
